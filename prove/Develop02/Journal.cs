@@ -2,8 +2,7 @@ public class Journal
 {
     public List<Entry> _entries = new List<Entry>();
 
-    public void AddEntry(Entry)
+    public void AddEntry(Entry entry)
     {
-        _entries.Add(Entry);
+        _entries.Add(entry);
     }
-}
