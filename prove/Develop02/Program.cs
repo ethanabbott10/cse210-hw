@@ -5,7 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
-    public string response = "";
+    public int _response = 0;
 
     public void Display()
     {
@@ -17,7 +17,35 @@ class Program
         Console.WriteLine("Save");
         Console.WriteLine("5. Quit");
         Console.WriteLine("What would you like to do? ");
-        string response = Console.ReadLine();
+        string _responseString = Console.ReadLine();
+        int _response = int.Parse(_responseString);
+    }
+
+    public void PerformAction(int _response)
+    {
+        if (_response == 1)
+        {
+        }
+
+        else if (_response == 2)
+        {
+
+        }
+
+        else if (_response == 3)
+        {
+
+        }
+
+        else if (_response == 4)
+        {
+
+        }
+
+        else
+        {
+
+        }
     }
 
 }
