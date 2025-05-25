@@ -3,24 +3,32 @@ using System.Security.Cryptography;
 
 public class Entry
 {
-    public List <string> _prompts = new List<string>
-    {"What's something I learned about myself recently?", "What am I grateful for today and why?", "Describe a challenge I overcame and what it taught me.", "How do I feel right now, and what's contributing to that feeling?", "What does my ideal day look like and how can I move closer to it?"
-    };
-
-    public DateTime _date = DateTime.Today;
+    public string _date = DateTime.Today.ToShortDateString();
     public string _prompt = "";
     public string _response = "";
-    public string _compiled = "";
+    public string _entry = "";
 
-    public void CompileEntry()
+    public void GetPrompt()
     {
-        Random rand = new Random();
-        int index = rand.Next(_prompts.Count);
-        _prompt = _prompts[index];
-        Console.WriteLine(_prompts[index]);
+        Prompt prompt = new Prompt();
+        _prompt = prompt.GeneratePrompt();
+    }
+
+    public void DisplayPrompt()
+    {
+        Console.WriteLine();
+        Console.WriteLine(_prompt);
+    }
+
+    public void GetResponse()
+    {
         _response = Console.ReadLine();
-        _dateString = _date.ToString();
-        _compiled = $"{_dateString}\n{_prompt}:\n{_response}";
+    }
+
+    public void DisplayEntry()
+    {
+        _entry = $"{_date}\n{_prompt}\n\n{_response}";
+        Console.WriteLine(_entry);
     }
 
 
