@@ -9,10 +9,16 @@ class Program
         int _index = 0;
 
         do
+        {
+            DisplayMenu();
+            _index = int.Parse(Console.ReadLine()) - 1;
+            Activity activity = new Activity(_index);
+            }
+        }
 
     }
 
-    public static int DisplayMenu()
+    public static void DisplayMenu()
     {
         Console.Clear();
         Console.WriteLine("Welcome to the Mindfulness Program.");
@@ -22,6 +28,5 @@ class Program
         Console.WriteLine("3. Listing Activity");
         Console.WriteLine("4. Quit");
         Console.Write("Selection: ");
-        int _index = int.Parse(Console.ReadLine()) - 1;
     }
 }
