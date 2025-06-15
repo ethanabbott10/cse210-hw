@@ -78,13 +78,13 @@ public class Activity
         _endTime = _startTime.AddSeconds(_duration);
     }
 
-    public DateTime SetSpinnerDuration(int duration)
+    private DateTime SetSpinnerDuration(int duration)
     {
         DateTime startTime = DateTime.Now;
         return startTime.AddSeconds(duration);
     }
 
-    public int GetRandomIndex(List<string> list)
+    protected int GetRandomIndex(List<string> list)
     {
         Random random = new Random();
         return random.Next(list.Count);
