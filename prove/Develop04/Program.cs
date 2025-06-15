@@ -1,19 +1,55 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 
 class Program
 {
     static void Main(string[] args)
     {
-        int _index = 0;
+        int _input = 0;
 
-        do
+         while (_input != 4)
         {
             DisplayMenu();
-            _index = int.Parse(Console.ReadLine()) - 1;
-            Activity activity = new Activity(_index);
+            _input = int.Parse(Console.ReadLine());
+
+
+            if (_input == 1)
+            {
+                BreathingActivity breathingActivity = new BreathingActivity();
+                breathingActivity.DisplayStartingMessage();
+                breathingActivity.DisplayDescription();
+                breathingActivity.SetDuration();
+                breathingActivity.DisplayActivityBeginning();
+                breathingActivity.DisplayAnimation(5);
+                breathingActivity.RunBreathingActivity();
+                breathingActivity.DisplayEndingMessage();
             }
+
+            else if (_input == 2)
+            {
+                ReflectionActivity reflectionActivity = new ReflectionActivity();
+                reflectionActivity.DisplayStartingMessage();
+                reflectionActivity.DisplayDescription();
+                reflectionActivity.SetDuration();
+                reflectionActivity.DisplayActivityBeginning();
+                reflectionActivity.DisplayAnimation(5);
+                reflectionActivity.RunReflectionActivity();
+                reflectionActivity.DisplayEndingMessage();
+            }
+
+            else if (_input == 3)
+            {
+                ListingActivity listingActivity = new ListingActivity();
+                listingActivity.DisplayStartingMessage();
+                listingActivity.DisplayDescription();
+                listingActivity.SetDuration();
+                listingActivity.DisplayActivityBeginning();
+                listingActivity.RunListingActivity();
+                listingActivity.DisplayEndingMessage();
+            }
+            
         }
 
     }
