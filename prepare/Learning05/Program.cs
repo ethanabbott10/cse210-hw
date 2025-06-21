@@ -19,8 +19,8 @@ class Program
         _shapes.Add(circle);
         foreach (Shape shape in _shapes)
         {
-            Console.WriteLine($"Color: {shape.GetColor()}");
-            Console.WriteLine($"Area: {shape.GetArea()}");
+            Console.WriteLine(shape.GetColor());
+            Console.WriteLine(shape.GetArea());
         }
     }
 }
