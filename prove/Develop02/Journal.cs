@@ -3,6 +3,12 @@ public class Journal
     public List<Entry> _entries = new List<Entry>();
     public string _fileName = "";
 
+    public override string ToString()
+
+    {
+        return base.ToString();
+    }
+
     public void AddEntry(Entry entry)
     {
         _entries.Add(entry);
