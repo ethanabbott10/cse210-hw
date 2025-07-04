@@ -53,9 +53,6 @@ public class Journal
             entry._response = parts[2];
             AddEntry(entry);
         }
-
-
-
     }
 
 }

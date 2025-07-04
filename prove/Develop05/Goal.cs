@@ -1,23 +1,45 @@
-public class Goal
+using System.Runtime.InteropServices;
+
+public abstract class Goal
 {
+    protected string _goalId;
     protected string _goal;
     protected string _description;
     protected int _pointValue;
+    protected int _pointsEarned;
     protected bool _completed;
     protected char _checkmark;
+    protected string _storageString;
 
     public Goal() { }
 
-    public void SetGoal()
+    public abstract void SetGoal();
+
+    public virtual void SetStorageString()
     {
-        Console.WriteLine("What is your goal?");
-        _goal = Console.ReadLine();
-        Console.WriteLine("Give a short description of your goal:");
-        _description = Console.ReadLine();
-        Console.WriteLine("How many points is this goal worth?");
-        _pointValue = int.Parse(Console.ReadLine());
-        _completed = false;
-        _checkmark = ' ';
+        _storageString = _storageString = $"simplegoal~{_goal}~{_description}~{_pointsEarned}~{_pointValue}~{_completed}";
     }
+
+    public string GetStorageString()
+    {
+        return _storageString;
+    }
+
+    public bool GetCompleted()
+    {
+        return _completed;
+    }
+
+    public int GetEarnedPoints()
+    {
+        return _pointsEarned;
+    }
+
+    public virtual void DisplayGoal()
+    {
+        Console.Write($"[{_checkmark}] {_goal} ({_description})");
+    }
+
+    public abstract void Complete(); 
 
 }
