@@ -5,6 +5,8 @@ class Program
 {
     static void Main(string[] args)
     {
+        // I used chat for the TryParse and case logic to make it so one must use the quit option to exit the program.
+        // I also added a way to delete a goal and store completed goals in a separate place.
         Log log = new Log();
         int _userInput = 0;
         while (_userInput != 8)
@@ -60,7 +62,6 @@ class Program
                         string _secondinput = Console.ReadLine();
                         Console.WriteLine();
 
-                        // used ChatGPT for this syntax
                         if (int.TryParse(_secondinput, out _goalChoice))
                         {
                             switch (_goalChoice)
