@@ -9,6 +9,7 @@ class Program
         Playlist _playlist = new Playlist();
         _playlist.AddVideo(CreateVideo());
         _playlist.AddVideo(CreateVideo());
+        _playlist.AddVideo(CreateVideo());
         _playlist.DisplayVideos();
     }
 
