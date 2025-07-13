@@ -8,7 +8,7 @@ public class Product
     private int _quantity;
     private double _totalProductPrice;
 
-    public Product(int productId, string name, float pricePerUnit, int quantity)
+    public Product(int productId, string name, double pricePerUnit, int quantity)
     {
         _productId = productId;
         _name = name;
@@ -30,5 +30,10 @@ public class Product
     public double GetTotalProductPrice()
     {
         return _totalProductPrice;
+    }
+
+    public int GetQuantity()
+    {
+        return _quantity;
     }
 }

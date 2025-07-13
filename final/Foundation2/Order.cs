@@ -9,7 +9,20 @@ public class Order
     private string _packingLablel;
     private string _shippingLabel;
 
-    public Order() { }
+    public Order(Customer customer)
+    {
+        _customer = customer;
+
+        if (customer.GetInUS() == true)
+        {
+            _shippingCost = 5.00;
+        }
+
+        else
+        {
+            _shippingCost = 35.00;
+        }
+    }
 
     public void AddProduct(Product product)
     {
@@ -29,10 +42,13 @@ public class Order
     public void DisplayOrder()
     {
         SetShippingLabel();
+        Console.WriteLine(_shippingLabel);
         Console.WriteLine();
         SetPackingLabel();
+        Console.WriteLine(_packingLablel);
         Console.WriteLine();
-        Console.WriteLine(GetTotalOrderPrice());
+        SetTotalOrderPrice();
+        Console.WriteLine($"{GetTotalOrderPrice()}");
         Console.WriteLine();
     }
 
@@ -43,15 +59,16 @@ public class Order
 
     public void SetPackingLabel()
     {
+        _packingLablel = "";
+
         foreach (Product product in _products)
         {
-            _packingLablel = _packingLablel + $"{product.GetProductId}: " + $"{product.GetName}" + "\n";
+            _packingLablel += $"{product.GetProductId()}: {product.GetName()} - {product.GetQuantity()}\n";
         }
-
     }
 
     public void SetShippingLabel()
     {
-        _shippingLabel = $"{_customer.GetName()}\n{_customer.GetAddress().GetStreetAddress()}\n{_customer.GetAddress().GetCity()}, {_customer.GetAddress().GetState()}, {_customer.GetAddress().GetCountry}";
+        _shippingLabel = $"{_customer.GetName()}\n{_customer.GetAddress().GetStreetAddress()}\n{_customer.GetAddress().GetCity()}, {_customer.GetAddress().GetState()}, {_customer.GetAddress().GetCountry()}";
     }
 }

@@ -20,4 +20,9 @@ public class Batch
     {
         _orders.Add(order);
     }
+
+    public int GetBatchSize()
+    {
+        return _orders.Count();
+    }
 }
