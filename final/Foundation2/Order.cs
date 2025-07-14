@@ -29,7 +29,7 @@ public class Order
         _products.Add(product);
     }
 
-    public void SetTotalOrderPrice()
+    private void SetTotalOrderPrice()
     {
         foreach (Product product in _products)
         {
@@ -52,12 +52,12 @@ public class Order
         Console.WriteLine();
     }
 
-    public double GetTotalOrderPrice()
+    private double GetTotalOrderPrice()
     {
         return _totalOrderPrice;
     }
 
-    public void SetPackingLabel()
+    private void SetPackingLabel()
     {
         _packingLablel = "";
 
@@ -67,7 +67,7 @@ public class Order
         }
     }
 
-    public void SetShippingLabel()
+    private void SetShippingLabel()
     {
         _shippingLabel = $"{_customer.GetName()}\n{_customer.GetAddress().GetStreetAddress()}\n{_customer.GetAddress().GetCity()}, {_customer.GetAddress().GetState()}, {_customer.GetAddress().GetCountry()}";
     }

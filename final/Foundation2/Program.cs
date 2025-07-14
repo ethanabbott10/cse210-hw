@@ -57,6 +57,7 @@ class Program
                         Console.WriteLine("8). GlowByte USB LED Strip (5ft) - $11.99");
                         Console.WriteLine("9). HexaGrip Phone Stand - $4.95");
                         Console.WriteLine("10). EverBean Cold Brew Kit - $34.50");
+                        Console.WriteLine();
                         Console.WriteLine("11). All done");
                         Console.WriteLine();
                         Console.WriteLine("Which prodcut would you like to purchase? (Please use the product ID number)");
