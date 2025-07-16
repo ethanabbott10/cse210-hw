@@ -148,24 +148,24 @@ class Program
                         if (index < planner.GetEventsListLength())
                         {
                             _selecciónVálida = true;
-                            bool _otherValidSelection = false;
+                            string otherInput = "0";
 
-                            while (_otherValidSelection == false)
+                            while (otherInput != "4")
                             {
                                 Console.Clear();
                                 Console.WriteLine("Messages:");
                                 Console.WriteLine("1). Standard Details");
                                 Console.WriteLine("2). Full Details");
                                 Console.WriteLine("3). Short description");
+                                Console.WriteLine("4). Exit");
                                 Console.WriteLine();
                                 Console.Write("Select the number of the message you would like to generate: ");
-                                string otherInput = Console.ReadLine();
+                                otherInput = Console.ReadLine();
 
                                 if (otherInput == "1")
                                 {
                                     Console.Clear();
                                     Console.WriteLine(planner.GetEvent(index).GetStandardDetails());
-                                    _otherValidSelection = true;
                                     Console.ReadKey();
                                 }
 
@@ -173,21 +173,24 @@ class Program
                                 {
                                     Console.Clear();
                                     Console.WriteLine(planner.GetEvent(index).GetFullDetails());
-                                    _otherValidSelection = true;
                                     Console.ReadKey();
                                 }
 
                                 else if (otherInput == "3")
                                 {
                                     Console.Clear();
-                                    Console.WriteLine(planner.GetEvent(index).GetFullDetails());
-                                    _otherValidSelection = true;
+                                    Console.WriteLine(planner.GetEvent(index).GetShortDescription());
                                     Console.ReadKey();
+                                }
+
+                                else if (otherInput == "4")
+                                {
+                    
                                 }
 
                                 else
                                 {
-                                    _otherValidSelection = false;
+
                                 }
                             }
                         }

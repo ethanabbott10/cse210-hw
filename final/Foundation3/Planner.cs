@@ -7,6 +7,7 @@ public class Planner
     public void AddEvent(Event newevent)
     {
         _planner.Add(newevent);
+        _planner = _planner.OrderBy(e => e.GetDate()).ThenBy(e => e.GetTime()).ToList();
     }
 
     public void DisplayEventsList()

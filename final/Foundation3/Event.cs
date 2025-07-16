@@ -29,4 +29,14 @@ abstract public class Event
     }
 
     abstract public void SetFullDetails();
+
+    public DateOnly GetDate()
+    {
+        return _date;
+    }
+
+    public TimeOnly GetTime()
+    {
+        return _time;
+    }
 }
