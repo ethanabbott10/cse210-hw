@@ -2,30 +2,30 @@ abstract public class Event
 {
     protected string _title;
     protected string _description;
-    protected DateTime _date;
-    protected DateTime _time;
+    protected DateOnly _date;
+    protected TimeOnly _time;
     protected Address _address;
     protected string _standardDetails;
     protected string _fullDetails;
     protected string _shortDescription;
     protected string _type;
 
-    public Event() {}   
+    public Event() { }
 
 
-    public void DisplayStandardDetails()
+    public string GetStandardDetails()
     {
-        Console.WriteLine(_standardDetails);
+        return _standardDetails;
     }
 
-    public void DisplayFullDetails()
+    public string GetFullDetails()
     {
-        Console.WriteLine(_fullDetails);
+        return _fullDetails;
     }
 
-    public void DisplayShortDescription()
+    public string GetShortDescription()
     {
-        Console.WriteLine(_shortDescription);
+        return _shortDescription;
     }
 
     abstract public void SetFullDetails();
