@@ -11,8 +11,16 @@ public abstract class Activity
 
     public Activity() { }
 
-    virtual public void SetInfo()
+    abstract public void SetInfo();
+
+    public void DisplaySummary()
     {
-        
+        Console.WriteLine(_summary);
     }
+
+    public DateOnly GetDate()
+    {
+        return _date;
+    }
+
 }
